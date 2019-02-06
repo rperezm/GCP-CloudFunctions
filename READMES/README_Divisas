@@ -1,0 +1,5 @@
+## Global Configurations
+
+Before to execute and scheduler cloud function, add **google-cloud-bigquery>=1.9.0** library into the  **requirements.txt** file.
+
+Set your api_key enviroment variable with your personal api_key, more information in [sbif_api](https://api.sbif.cl/documentacion/index.html)
