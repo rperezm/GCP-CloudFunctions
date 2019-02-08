@@ -40,12 +40,11 @@ def get_divisas(request):
     table = bigquery_client.get_table(table_ref)
     
     logging.warn("Insert2BQ")
-    
     for item in r.json()[array]:
-        rows_to_insert = [(u"{0}".format(item["Fecha"]), item["Valor"].replace(".","").replace(",","."))]
+        rows_to_insert = [(u"{0}".format(item["Fecha"]), item["Valor"].replace(",","."))]
         errors = bigquery_client.insert_rows(table, rows_to_insert)
         assert errors == []
-        
-        logging.warn('Divisa :'+ divisa+' Fecha :' + item["Fecha"] + ' Valor :' + item["Valor"] + ' Inserted !!!')
+        msg='Divisa :'+ divisa+' Fecha :' + item["Fecha"] + ' Valor :' + item["Valor"] + ' Inserted !!!'
+        logging.warn(msg)
     
-    return 'OK'
+    return msg

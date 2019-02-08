@@ -1,0 +1,10 @@
+[
+  {
+    "name": "Fecha", 
+    "type": "DATE"
+  }, 
+  {
+    "name": "Valor", 
+    "type": "FLOAT"
+  }
+]
