@@ -22,7 +22,7 @@ Por motivos de requerimiento de negocio los registros fueron almacenados en BigQ
 
 Before create the cron tab, define the body post request for example see `dolar_body.json` and use `create_cron.sh` script
 
-EX Usage : `bash create_cron.sh "get_uf" "0 8 * * *" "https://us-central1-tiaxa-galileo.cloudfunctions.net/get_divisas" "uf_body.json"`
+EX Usage : `bash create_cron.sh "get_uf" "0 8 * * *" "https://localization-project.cloudfunctions.net/get_divisas" "uf_body.json"`
 
 ### Set to requeriments.txt
 
@@ -31,6 +31,6 @@ Before to execute `create_cron.sh` and scheduler cloud function, add **google-cl
 Set your api_key enviroment variable with your personal api_key in Cloud Function enviroment variables, more information in [sbif_api](https://api.sbif.cl/documentacion/index.html)
 
 
-gcloud beta scheduler jobs create http get_dolar --schedule="0 8 * * *" --uri="https://us-central1-tiaxa-galileo.cloudfunctions.net/get_divisas"--headers="application/json" --http-method POST  --time-zone="America/Santiago" --message-body-from-file="dolar_body.json" 
+gcloud beta scheduler jobs create http get_dolar --schedule="0 8 * * *" --uri="https://localization-project.cloudfunctions.net/get_divisas"--headers="application/json" --http-method POST  --time-zone="America/Santiago" --message-body-from-file="dolar_body.json" 
 
 
