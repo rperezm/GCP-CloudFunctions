@@ -2,7 +2,7 @@
 
 if [ $# -ne 4 ]; then
   echo "Incorrect parameters number"
-  echo'"EX: bash create_cron.sh "get_euro" "0 8 * * *" "https://us-central1-tiaxa-galileo.cloudfunctions.net/get_divisas" "euro_body.json"'
+  echo'"EX: bash create_cron.sh "get_euro" "0 8 * * *" "https://region-project.cloudfunctions.net/get_divisas" "euro_body.json"'
   exit 1
 fi
 
